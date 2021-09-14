@@ -1,6 +1,6 @@
 # Welcome
 
-This project is a simple example of how to work with [Neo4j](https://neo4j.com), [Next.js](https://nextjs.org), and the map visualization library [React Leaflet](https://react-leaflet.js.org) within a [Docker](https://www.docker.com) container.
+This project is a simple example of how to work with [Neo4j](https://neo4j.com), [Next.js](https://nextjs.org), and the map visualization library [React Leaflet](https://react-leaflet.js.org) within a [Docker](https://www.docker.com) environment.
 
 All you need to have installed on your system to run this example is [Docker](https://www.docker.com).
 
