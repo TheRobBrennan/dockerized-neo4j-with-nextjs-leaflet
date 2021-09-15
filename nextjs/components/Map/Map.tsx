@@ -1,15 +1,14 @@
 // Special thanks to https://github.com/colbyfayock/next-leaflet-starter/blob/main/src/components/Map/Map.js
 import { useEffect } from "react"
 import L from "leaflet"
-import * as ReactLeaflet from "react-leaflet"
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
 
 import styles from "./Map.module.css"
 
 import MapDetail from "../MapDetail"
-const { MapContainer } = ReactLeaflet
 
-const Map = ({ children, className, ...rest }) => {
+const Map = ({ center, className, ...rest }) => {
   let mapClassName = styles.map
 
   if (className) {
@@ -17,7 +16,7 @@ const Map = ({ children, className, ...rest }) => {
   }
 
   useEffect(() => {
-    // NOTE: We need to disable the next line because we are going to be defining images for our markers
+    // NOTE: We need to disable the next line because we are going to be defining images for our markers. Otherwise, our build will fail.
     // @ts-ignore
     delete L.Icon.Default.prototype._getIconUrl
 
@@ -29,8 +28,17 @@ const Map = ({ children, className, ...rest }) => {
   }, [])
 
   return (
-    <MapContainer className={mapClassName} {...rest}>
-      {children(ReactLeaflet)}
+    <MapContainer className={mapClassName} center={center} {...rest}>
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+      />
+      <Marker position={center}>
+        <Popup>
+          A pretty CSS3 popup. <br /> Easily customizable.
+        </Popup>
+      </Marker>
+
       <MapDetail />
     </MapContainer>
   )
