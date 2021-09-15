@@ -6,7 +6,7 @@ import "leaflet/dist/leaflet.css"
 
 import styles from "./Map.module.css"
 
-import MapDetail from "../MapDetail"
+import CurrentLocation from "../CurrentLocation"
 
 const Map = ({ center, className, ...rest }) => {
   let mapClassName = styles.map
@@ -38,8 +38,7 @@ const Map = ({ center, className, ...rest }) => {
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>
       </Marker>
-
-      <MapDetail />
+      <CurrentLocation />
     </MapContainer>
   )
 }

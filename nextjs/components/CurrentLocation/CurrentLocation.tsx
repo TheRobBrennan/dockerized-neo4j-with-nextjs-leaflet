@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useMapEvents, Marker, Popup } from "react-leaflet"
 
-const MapDetail = () => {
+const CurrentLocation = () => {
   const [position, setPosition] = useState(null)
   const map = useMapEvents({
     click: () => map.locate(),
@@ -21,4 +21,4 @@ const MapDetail = () => {
   )
 }
 
-export default MapDetail
+export default CurrentLocation
