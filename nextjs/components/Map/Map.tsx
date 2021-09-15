@@ -18,7 +18,7 @@ const Map = ({ children, className, ...rest }) => {
 
   useEffect(() => {
     // NOTE: We need to disable the next line because we are going to be defining images for our markers
-    // eslint-disable-line
+    // @ts-ignore
     delete L.Icon.Default.prototype._getIconUrl
 
     L.Icon.Default.mergeOptions({
