@@ -12,6 +12,8 @@ If you do not have [Docker](https://www.docker.com) installed on your developmen
 
 ## Getting started
 
+[Neo4j](https://neo4j.com) has been added purely as an experimental backend to incorporate at a future date and time. The core app, as it stands, does not require [Neo4j](https://neo4j.com), but I am optimistic that I may be incorporating it for analyzing data, generating sample data, and more.
+
 **IMPORTANT: Before starting this project, please be sure to copy `nextjs/.env.sample` to `nextjs/.env.local`**
 
 To spin up your Dockerized Neo4j and Next.js project:
@@ -25,6 +27,16 @@ $ npm run dev
 # Force a clean build to ensure your instances are using the latest code
 $ npm run dev:clean
 ```
+
+## [OPTIONAL] Additional details
+
+The sections that follow are purely for informational purposes about my base project. I hope you find it interesting, as I enjoyed writing and documenting some fascinating technical nuggets.
+
+![https://media.giphy.com/media/xUOxfoA5ffZ8xoTDC8/giphy.gif?cid=ecf05e47u1x77s7l3rorqe7hntu8w4t9z0evb80quqpd1eag&rid=giphy.gif&ct=g](https://media.giphy.com/media/xUOxfoA5ffZ8xoTDC8/giphy.gif?cid=ecf05e47u1x77s7l3rorqe7hntu8w4t9z0evb80quqpd1eag&rid=giphy.gif&ct=g)
+
+However, you can start developing and exploring this project - knowing that these details are here if you're truly curious about some more possibilities - without reading any further in this guide.
+
+Happy coding! 🚁
 
 ### Neo4j
 
