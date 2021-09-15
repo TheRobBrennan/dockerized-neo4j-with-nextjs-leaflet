@@ -2,7 +2,7 @@ version: "3"
 
 services:
   nextjs:
-    container_name: "dockerized-nextjs"
+    container_name: "dockerized-nextjs-with-leaflet"
     depends_on:
       - neo4j
     ports:

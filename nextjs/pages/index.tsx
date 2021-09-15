@@ -1,36 +1,39 @@
 import Head from "next/head"
 import Image from "next/image"
-import Link from "next/link"
 
 import styles from "../styles/Home.module.css"
+
+import Map from "../components/Map"
+
+const PAGE_TITLE = `DEMO: Next.js and Leaflet`
+const DEFAULT_CENTER = [38.907132, -77.036546] // Brevet Lieutenant-General Winfield Scott Statue, Washington, DC
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>[DEMO] Neo4j and Next.js</title>
+        <title>{PAGE_TITLE}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Explore the{" "}
-          <a href="https://neo4j.com" rel="noopener noreferrer" target="_blank">
-            Neo4j
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://nextjs.org"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Next.js
-          </a>{" "}
-          powered{" "}
-          <Link href="/api/graphql">
-            <a target="_blank">GraphQL API</a>
-          </Link>
-        </h1>
+        <h1 className={styles.title}>{PAGE_TITLE}</h1>
+
+        <Map className={styles.homeMap} center={DEFAULT_CENTER} zoom={12}>
+          {({ TileLayer, Marker, Popup }) => (
+            <>
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              />
+              <Marker position={DEFAULT_CENTER}>
+                <Popup>
+                  A pretty CSS3 popup. <br /> Easily customizable.
+                </Popup>
+              </Marker>
+            </>
+          )}
+        </Map>
       </main>
 
       <footer className={styles.footer}>
