@@ -17,6 +17,8 @@ const Map = ({ children, className, ...rest }) => {
   }
 
   useEffect(() => {
+    // NOTE: We need to disable the next line because we are going to be defining images for our markers
+    // @ts-ignore
     delete L.Icon.Default.prototype._getIconUrl
 
     L.Icon.Default.mergeOptions({
