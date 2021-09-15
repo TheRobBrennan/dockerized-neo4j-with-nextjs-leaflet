@@ -6,7 +6,7 @@ import styles from "../styles/Home.module.css"
 import Map from "../components/Map"
 
 const PAGE_TITLE = `DEMO: Next.js and Leaflet`
-const DEFAULT_CENTER = [38.907132, -77.036546]
+const DEFAULT_CENTER = [38.907132, -77.036546] // Brevet Lieutenant-General Winfield Scott Statue, Washington, DC
 
 export default function Home() {
   return (
