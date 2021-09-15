@@ -20,6 +20,7 @@
     "docker:neo4j:shell": "docker exec -ti dockerized-neo4j bash",
     "docker:neo4j:cypher-shell": "docker exec -ti dockerized-neo4j cypher-shell -u neo4j -p letmein",
     "docker:neo4j:data": "docker exec -ti dockerized-neo4j ls -al /var/lib/neo4j/data/",
+    "docker:nextjs:build": "docker-compose up -d --force-recreate --no-deps --build nextjs",
     "docker:destroy": "docker-compose rm -f -s -v",
     "docker:destroy:global": "docker system prune -f --volumes && docker image prune -a -f",
     "nuke": "clear && npm run docker:destroy:global && npm run dev"
