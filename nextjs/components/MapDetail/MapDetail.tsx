@@ -1,10 +1,24 @@
-import { useMap } from "react-leaflet"
+import { useState } from "react"
+import { useMapEvents, Marker, Popup } from "react-leaflet"
 
 const MapDetail = () => {
-  const map = useMap()
-  console.log(`map center:`, map.getCenter())
+  const [position, setPosition] = useState(null)
+  const map = useMapEvents({
+    click: () => map.locate(),
+    locationfound: (e) => {
+      setPosition(e.latlng)
+      map.flyTo(e.latlng, map.getZoom())
+    },
+  })
 
-  return null
+  return position === null ? null : (
+    <Marker position={position}>
+      <Popup>
+        You are <strong>here</strong>: <br />
+        {JSON.stringify(position, null, 2)}
+      </Popup>
+    </Marker>
+  )
 }
 
 export default MapDetail
