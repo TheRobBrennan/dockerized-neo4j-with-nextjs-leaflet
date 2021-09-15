@@ -1,14 +1,14 @@
 // Special thanks to https://github.com/colbyfayock/next-leaflet-starter/blob/main/src/components/Map/Map.js
 import { useEffect } from "react"
 import L from "leaflet"
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
+import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
 
 import styles from "./Map.module.css"
 
 import CurrentLocation from "../CurrentLocation"
 
-const Map = ({ center, className, ...rest }) => {
+const Map = ({ center, className, positions, ...rest }) => {
   let mapClassName = styles.map
 
   if (className) {
@@ -28,7 +28,12 @@ const Map = ({ center, className, ...rest }) => {
   }, [])
 
   return (
-    <MapContainer className={mapClassName} center={center} {...rest}>
+    <MapContainer
+      className={mapClassName}
+      center={center}
+      positions={positions}
+      {...rest}
+    >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -39,6 +44,7 @@ const Map = ({ center, className, ...rest }) => {
         </Popup>
       </Marker>
       <CurrentLocation />
+      <Polyline pathOptions={{ color: "purple" }} positions={positions} />
     </MapContainer>
   )
 }
