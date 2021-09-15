@@ -22,6 +22,7 @@
     "ts-tiny-invariant": "^0.0.3"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.7.5",
     "@types/react": "^17.0.19",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
