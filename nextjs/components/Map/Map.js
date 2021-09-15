@@ -6,6 +6,7 @@ import "leaflet/dist/leaflet.css"
 
 import styles from "./Map.module.css"
 
+import MapDetail from "../MapDetail"
 const { MapContainer } = ReactLeaflet
 
 const Map = ({ children, className, ...rest }) => {
@@ -28,6 +29,7 @@ const Map = ({ children, className, ...rest }) => {
   return (
     <MapContainer className={mapClassName} {...rest}>
       {children(ReactLeaflet)}
+      <MapDetail />
     </MapContainer>
   )
 }
