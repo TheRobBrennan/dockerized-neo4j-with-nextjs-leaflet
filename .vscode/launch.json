@@ -5,17 +5,8 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "[DOCKER] Next.js API",
+      "name": "Next.js API",
       "address": "localhost",
-      "localRoot": "${workspaceFolder}/nextjs",
-      "port": 9229,
-      "request": "attach",
-      "skipFiles": ["<node_internals>/**"],
-      "type": "pwa-node"
-    },
-    {
-      "name": "[LOCAL] Next.js API",
-      "address": "127.0.0.1",
       "localRoot": "${workspaceFolder}/nextjs",
       "port": 9229,
       "request": "attach",
@@ -33,7 +24,7 @@
   "compounds": [
     {
       "name": "Next.js",
-      "configurations": ["Next.js Frontend - Chrome"]
+      "configurations": ["Next.js Frontend - Chrome", "Next.js API"]
     }
   ]
 }
